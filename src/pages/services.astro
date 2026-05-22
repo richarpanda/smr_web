@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+
+const services = [
+  { icon: "snowflake",        title: "Refrigeración Industrial",   desc: "Sistemas de amoniaco (NH₃), CO₂ y HFC para operación continua de alto rendimiento. Diseñados para confiabilidad 24/7." },
+  { icon: "boxes",            title: "Cámaras Frías",              desc: "Cámaras de almacenamiento modulares y personalizadas de 0°C a +12°C, con aislamiento completo, puertas y equipo de refrigeración." },
+  { icon: "thermometer",      title: "Cuartos de Congelación",     desc: "Congelación a baja y ultra-baja temperatura hasta −40°C, incluidos túneles de congelación rápida." },
+  { icon: "activity",         title: "Sistemas de Cadena de Frío", desc: "Infraestructura térmica integral para centros de distribución y operaciones logísticas integradas." },
+  { icon: "wrench",           title: "Mantenimiento",              desc: "Contratos preventivos, servicio correctivo y respuesta de emergencia 24/7 en todo México." },
+  { icon: "factory",          title: "Proyectos Llave en Mano",    desc: "Diagnóstico, ingeniería, suministro, instalación y puesta en marcha bajo un solo contrato y cronograma." },
+  { icon: "gauge",            title: "Eficiencia Energética",      desc: "Retrofits con variadores de velocidad, ventiladores EC, presión de cabeza flotante y recuperación de calor." },
+  { icon: "building-2",       title: "Refrigeración Comercial",    desc: "Refrigeración para supermercados, restaurantes y HORECA con muebles exhibidores y unidades condensadoras." },
+];
+---
+
+<BaseLayout
+  title="Servicios — SMR"
+  description="Refrigeración industrial, cámaras frías, cuartos de congelación, mantenimiento y proyectos llave en mano."
+  canonical="/services"
+  ogTitle="Servicios — SMR"
+  ogDescription="Ingeniería de refrigeración de amplio espectro."
+>
+  <PageHero
+    eyebrow="Servicios"
+    title="Ingeniería de refrigeración de amplio espectro."
+    subtitle="Cada sistema que entregamos — desde una sola cámara fría hasta una planta de múltiples megawatts — es diseñado, construido y mantenido por nuestro equipo interno."
+  />
+
+  <section class="py-24">
+    <div class="mx-auto max-w-7xl px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((s) => (
+        <div class="group glass rounded-2xl p-7 hover:border-ice/40 transition reveal">
+          <div class="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-ice/10 border border-ice/20 mb-5 group-hover:shadow-glow transition">
+            <Icon name={s.icon} class="h-5 w-5 text-ice" />
+          </div>
+          <h3 class="font-display text-xl font-semibold mb-2">{s.title}</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed mb-5">{s.desc}</p>
+          <a href="/contact" class="inline-flex items-center gap-2 text-ice text-sm font-medium hover:gap-3 transition-all">
+            Habla de tu proyecto <Icon name="arrow-right" class="h-3.5 w-3.5" />
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="mx-auto max-w-5xl px-6 text-center reveal">
+      <h2 class="font-display text-3xl md:text-4xl font-bold">¿Necesitas una solución a la medida?</h2>
+      <p class="mt-4 text-muted-foreground text-lg">Nuestros ingenieros responden en 24 horas.</p>
+      <a href="/contact" class="mt-8 inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-gradient-ice text-white font-medium shadow-glow hover:opacity-90 transition">
+        Solicitar Cotización <Icon name="arrow-right" class="h-4 w-4" />
+      </a>
+    </div>
+  </section>
+</BaseLayout>

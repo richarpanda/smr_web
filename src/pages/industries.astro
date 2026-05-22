@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import IndustriesInteractive from '../components/IndustriesInteractive';
+---
+
+<BaseLayout
+  title="Industrias — SMR"
+  description="Soluciones de refrigeración para alimentos, farmacéutica, logística, retail y HORECA."
+  canonical="/industries"
+  ogTitle="Industrias — SMR"
+  ogDescription="Para industrias donde el frío es crítico."
+>
+  <PageHero
+    eyebrow="Industrias"
+    title="Donde el frío no es negociable."
+    subtitle="Prácticas de refrigeración especializada para las industrias que dependen del rendimiento térmico ininterrumpido."
+  />
+
+  <IndustriesInteractive client:load />
+</BaseLayout>

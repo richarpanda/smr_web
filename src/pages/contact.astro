@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ContactForm from '../components/ContactForm';
+---
+
+<BaseLayout
+  title="Contacto — SMR"
+  description="Solicita una cotización o habla con nuestro equipo de ingeniería. Soporte de emergencia 24/7."
+  canonical="/contact"
+  ogTitle="Contacto — SMR"
+  ogDescription="Habla con nuestro equipo de ingeniería."
+>
+  <PageHero
+    eyebrow="Contacto"
+    title="Habla con nuestro equipo de ingeniería."
+    subtitle="Cuéntanos sobre tu proyecto. Respondemos en 24 horas con una evaluación técnica preliminar."
+  />
+
+  <ContactForm client:load />
+</BaseLayout>

@@ -1,0 +1,95 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+}
+
+const {
+  title,
+  description = "Refrigeración industrial llave en mano, cámaras frías, cuartos de congelación e infraestructura de cadena de frío.",
+  canonical,
+  ogTitle,
+  ogDescription,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:title" content={ogTitle ?? title} />
+    <meta property="og:description" content={ogDescription ?? description} />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-screen flex flex-col bg-background">
+    <Navbar />
+    <main class="flex-1 pt-16">
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- Scroll Reveal + Parallax -->
+    <script>
+      // ── Scroll Reveal ──
+      const els = Array.from(document.querySelectorAll<HTMLElement>('.reveal, .reveal-scale'));
+      if (els.length) {
+        els.forEach(el => { el.dataset.ready = 'true'; });
+
+        const show = (el: HTMLElement) => el.classList.add('in-view');
+
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                show(entry.target as HTMLElement);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.05 }
+        );
+
+        els.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            show(el);
+          } else {
+            observer.observe(el);
+          }
+        });
+      }
+
+      // ── Parallax ──
+      const parallaxEls = Array.from(document.querySelectorAll<HTMLElement>('[data-parallax]'));
+      if (parallaxEls.length) {
+        const onScroll = () => {
+          const scrollY = window.scrollY;
+          parallaxEls.forEach(el => {
+            const speed = parseFloat(el.dataset.parallax ?? '0.15');
+            const rect = el.getBoundingClientRect();
+            const center = rect.top + rect.height / 2 + scrollY - window.innerHeight / 2;
+            el.style.transform = `translateY(${center * speed * -0.5}px)`;
+          });
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+    </script>
+  </body>
+</html>

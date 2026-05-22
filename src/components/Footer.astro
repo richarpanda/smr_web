@@ -1,0 +1,110 @@
+---
+import Icon from './Icon.astro';
+
+const serviceLinks: [string, string][] = [
+  ["Refrigeración Industrial", "/services"],
+  ["Cámaras Frías", "/services"],
+  ["Cuartos de Congelación", "/services"],
+  ["Mantenimiento", "/services"],
+  ["Proyectos Llave en Mano", "/services"],
+];
+
+const companyLinks: [string, string][] = [
+  ["Nosotros", "/about"],
+  ["Proyectos", "/projects"],
+  ["Industrias", "/industries"],
+  ["Tecnología", "/technology"],
+  ["Blog", "/blog"],
+];
+
+const certLinks: [string, string][] = [
+  ["ISO 9001", "#"],
+  ["ASHRAE", "#"],
+  ["IIAR", "#"],
+  ["NOM-009", "#"],
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="relative mt-32 border-t border-border bg-[oklch(0.16_0.05_240)]">
+  <div class="absolute inset-0 grid-blueprint opacity-30 pointer-events-none"></div>
+  <div class="relative mx-auto max-w-7xl px-6 py-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-10">
+      <!-- Brand -->
+      <div class="col-span-2 lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-5">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-ice">
+            <Icon name="snowflake" class="h-5 w-5 text-white" />
+          </span>
+          <span class="font-display text-xl font-bold text-white">SMR</span>
+        </div>
+        <p class="text-sm text-muted-foreground max-w-xs leading-relaxed">
+          Ingeniería industrial de cadena de frío. Infraestructura de refrigeración
+          llave en mano para las operaciones más exigentes.
+        </p>
+        <div class="flex gap-2 mt-5">
+          {(["linkedin", "facebook", "instagram"] as const).map((icon) => (
+            <a href="#" class="h-9 w-9 inline-flex items-center justify-center rounded-md glass hover:border-primary transition" aria-label={icon}>
+              <Icon name={icon} class="h-4 w-4 text-muted-foreground" />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Servicios -->
+      <div>
+        <h4 class="font-display text-sm font-semibold mb-4 uppercase tracking-wider text-ice">Servicios</h4>
+        <ul class="space-y-2.5 text-sm">
+          {serviceLinks.map(([label, href]) => (
+            <li><a href={href} class="text-muted-foreground hover:text-foreground transition">{label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Empresa -->
+      <div>
+        <h4 class="font-display text-sm font-semibold mb-4 uppercase tracking-wider text-ice">Empresa</h4>
+        <ul class="space-y-2.5 text-sm">
+          {companyLinks.map(([label, href]) => (
+            <li><a href={href} class="text-muted-foreground hover:text-foreground transition">{label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Certificaciones -->
+      <div>
+        <h4 class="font-display text-sm font-semibold mb-4 uppercase tracking-wider text-ice">Certificaciones</h4>
+        <ul class="space-y-2.5 text-sm">
+          {certLinks.map(([label, href]) => (
+            <li><a href={href} class="text-muted-foreground hover:text-foreground transition">{label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div>
+        <h4 class="font-display text-sm font-semibold mb-4 uppercase tracking-wider text-ice">Contacto</h4>
+        <ul class="space-y-3 text-sm text-muted-foreground">
+          <li class="flex gap-2">
+            <Icon name="phone" class="h-4 w-4 mt-0.5 text-ice shrink-0" />
+            +52 (55) 1234 5678
+          </li>
+          <li class="flex gap-2">
+            <Icon name="mail" class="h-4 w-4 mt-0.5 text-ice shrink-0" />
+            info@smr.engineering
+          </li>
+          <li class="flex gap-2">
+            <Icon name="map-pin" class="h-4 w-4 mt-0.5 text-ice shrink-0" />
+            Cobertura nacional — México
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
+      <p>© {year} SMR. Todos los derechos reservados.</p>
+      <p class="font-mono uppercase tracking-[0.2em]">Cadena de Frío · Ingeniería · Confianza</p>
+    </div>
+  </div>
+</footer>

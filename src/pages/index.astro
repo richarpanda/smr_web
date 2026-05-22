@@ -1,0 +1,450 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout
+  title="SMR — Ingeniería Industrial de Cadena de Frío"
+  description="Refrigeración industrial llave en mano, cámaras frías, cuartos de congelación e infraestructura de cadena de frío. Ingeniería, instalación y servicio 24/7."
+  canonical="/"
+  ogTitle="SMR — Ingeniería Industrial de Cadena de Frío"
+  ogDescription="Soluciones de refrigeración industrial llave en mano."
+>
+
+  <!-- ─── HERO ─── -->
+  <section class="relative -mt-16 min-h-screen flex items-center overflow-hidden">
+    <div class="absolute left-0 right-0" style="top: -15%; bottom: -15%;">
+      <img
+        src="/images/hero-refrigeration.jpg"
+        alt="Instalación de refrigeración industrial"
+        class="h-full w-full object-cover animate-hero-zoom parallax-img"
+        data-parallax="0.18"
+      />
+    </div>
+
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, oklch(0.16 0.05 240 / 0.82) 0%, oklch(0.18 0.06 240 / 0.55) 50%, oklch(0.16 0.05 240 / 0.78) 100%);"></div>
+    <div class="absolute inset-0 grid-blueprint opacity-10"></div>
+
+    <div class="absolute top-1/4 -left-40 h-[500px] w-[500px] rounded-full bg-ice/15 blur-[140px] animate-pulse-glow"></div>
+    <div class="absolute bottom-1/3 right-0 h-96 w-96 rounded-full bg-ice/10 blur-[120px] animate-pulse-glow" style="animation-delay: 1.5s;"></div>
+    <div class="absolute top-2/3 left-1/2 h-64 w-64 rounded-full bg-[oklch(0.40_0.20_245)]/10 blur-[100px]"></div>
+
+    <div class="absolute top-1/4 right-1/4 h-2 w-2 rounded-full bg-ice/60 animate-drift-1"></div>
+    <div class="absolute top-1/3 left-1/3 h-1.5 w-1.5 rounded-full bg-ice/40 animate-drift-2"></div>
+    <div class="absolute bottom-1/3 right-1/3 h-2.5 w-2.5 rounded-full bg-ice/50 animate-drift-3"></div>
+    <div class="absolute top-1/2 right-1/5 h-1 w-1 rounded-full bg-white/50 animate-drift-1" style="animation-delay: 3s;"></div>
+    <div class="absolute top-3/4 left-1/4 h-1.5 w-1.5 rounded-full bg-ice/30 animate-drift-2" style="animation-delay: 2s;"></div>
+
+    <div class="absolute top-24 right-16 flex items-center justify-center pointer-events-none">
+      <div class="h-3 w-3 rounded-full bg-ice/80"></div>
+      <div class="absolute h-3 w-3 rounded-full border border-ice/60 animate-radar"></div>
+      <div class="absolute h-3 w-3 rounded-full border border-ice/40 animate-radar-delay"></div>
+    </div>
+
+    <div class="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-ice/40 to-transparent animate-scan pointer-events-none" style="top: 30%;"></div>
+
+    <div class="relative mx-auto max-w-7xl px-6 py-32 w-full">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 glass px-3 py-1.5 rounded-full mb-8 animate-rise">
+          <span class="h-1.5 w-1.5 rounded-full bg-ice animate-pulse"></span>
+          <span class="text-xs font-mono uppercase tracking-[0.2em] text-ice">Refrigeración Industrial · Est. 2009</span>
+        </div>
+
+        <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.92] tracking-tight text-white animate-rise delay-200">
+          Ingeniería<br />
+          <span class="text-gradient-ice animate-gradient">Cadena de Frío</span><br />
+          Industrial.
+        </h1>
+
+        <p class="mt-8 text-lg md:text-xl text-white/75 max-w-xl leading-relaxed animate-rise delay-400">
+          Infraestructura de refrigeración llave en mano para las operaciones
+          más exigentes. Diseñada, construida y mantenida por SMR.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-4 animate-rise delay-600">
+          <a href="/contact" class="group inline-flex items-center gap-2 px-7 py-4 rounded-md bg-gradient-ice text-white font-semibold shadow-glow hover:opacity-90 transition-all hover:scale-[1.02]">
+            Solicitar Cotización
+            <Icon name="arrow-right" class="h-4 w-4 group-hover:translate-x-1 transition" />
+          </a>
+          <a href="/projects" class="inline-flex items-center gap-2 px-7 py-4 rounded-md glass hover:border-ice/40 transition-all font-medium text-white hover:scale-[1.02]">
+            Ver Proyectos
+            <Icon name="arrow-up-right" class="h-4 w-4" />
+          </a>
+        </div>
+
+        <div class="mt-14 flex flex-wrap gap-6 animate-rise delay-700">
+          {[
+            { v: "+100", l: "proyectos" },
+            { v: "+15", l: "años de experiencia" },
+            { v: "24/7", l: "soporte técnico" },
+          ].map((s) => (
+            <div class="flex items-baseline gap-1.5">
+              <span class="font-display text-3xl font-bold text-gradient-ice">{s.v}</span>
+              <span class="text-sm text-white/50 font-mono">{s.l}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style="background: linear-gradient(to bottom, transparent, oklch(0.98 0.005 240 / 0.15));"></div>
+  </section>
+
+  <!-- ─── TRUST ─── -->
+  <!-- <section class="py-14 border-y border-border relative overflow-hidden" style="background: oklch(0.97 0.015 235);">
+    <div class="absolute inset-0 dot-pattern opacity-60 pointer-events-none"></div>
+    <div class="relative mx-auto max-w-7xl px-6">
+      <p class="text-center text-xs font-mono uppercase tracking-[0.3em] text-ice mb-8 font-semibold">
+        La confianza de líderes de la industria
+      </p>
+      <div class="overflow-hidden [mask-image:linear-gradient(90deg,transparent,white_15%,white_85%,transparent)]">
+        <div class="flex gap-16 animate-marquee w-max">
+          {["NESTLÉ","BIMBO","WALMART","FEMSA","SIGMA","DANONE","LALA","HEB","SORIANA","OXXO",
+            "NESTLÉ","BIMBO","WALMART","FEMSA","SIGMA","DANONE","LALA","HEB","SORIANA","OXXO"].map((l, i) => (
+            <span class="font-display text-2xl md:text-3xl font-bold text-[oklch(0.50_0.18_235)]/35 hover:text-ice transition whitespace-nowrap">{l}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ─── ABOUT ─── -->
+  <section class="py-32 relative overflow-hidden" style="background: linear-gradient(135deg, oklch(0.96 0.02 235) 0%, oklch(0.99 0.005 250) 60%, oklch(0.96 0.015 235) 100%);">
+    <div class="absolute inset-0 cross-pattern opacity-70 pointer-events-none"></div>
+    <div class="absolute -top-24 -right-24 h-[480px] w-[480px] rounded-full border-[48px] border-ice/8 pointer-events-none"></div>
+    <div class="absolute -top-10 -right-10 h-[320px] w-[320px] rounded-full border-[24px] border-ice/5 pointer-events-none"></div>
+    <div class="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-ice/8 blur-[80px] pointer-events-none"></div>
+
+    <div class="relative mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative reveal-scale">
+        <div class="absolute -inset-4 bg-ice/15 rounded-2xl blur-2xl"></div>
+        <div class="relative rounded-2xl overflow-hidden border border-ice/20 shadow-xl" style="height: 480px;">
+          <img src="/images/engineer.jpg" alt="Ingeniero SMR" class="h-full w-full object-cover parallax-img" data-parallax="0.12" />
+          <div class="absolute inset-0 bg-gradient-to-tr from-[oklch(0.16_0.05_240)]/30 to-transparent"></div>
+        </div>
+        <div class="absolute -bottom-6 -right-6 bg-white border border-border rounded-xl p-5 max-w-[200px] shadow-lg">
+          <div class="font-display text-3xl font-bold text-gradient-ice">15+</div>
+          <div class="text-xs text-muted-foreground mt-1">Años ingeniando infraestructura de frío</div>
+        </div>
+        <div class="absolute -top-4 -left-4 bg-gradient-ice text-white rounded-xl px-4 py-2 text-xs font-mono font-bold shadow-glow uppercase tracking-wider">ISO 9001</div>
+      </div>
+
+      <div class="reveal">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-ice mb-5 font-semibold">Sobre SMR</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight text-foreground">
+          Ingeniería de <span class="text-gradient-ice">cadena de frío</span> que mantiene la industria en marcha.
+        </h2>
+        <p class="mt-6 text-muted-foreground text-lg leading-relaxed">
+          Diseñamos e instalamos sistemas de refrigeración industrial — desde cámaras
+          compactas hasta centros de distribución de múltiples megawatts. Nuestros
+          ingenieros combinan precisión mecánica, eficiencia energética y controles
+          inteligentes para entregar infraestructura que funciona por décadas.
+        </p>
+
+        <div class="mt-10 grid grid-cols-2 gap-5">
+          {[
+            { v: "100+", l: "Proyectos" },
+            { v: "30+", l: "Ingenieros" },
+            { v: "12 MW", l: "Capacidad instalada" },
+            { v: "99.98%", l: "SLA de disponibilidad" },
+          ].map((s) => (
+            <div class="reveal rounded-xl bg-white border border-border p-4 shadow-sm">
+              <div class="font-display text-3xl font-bold text-gradient-ice">{s.v}</div>
+              <div class="text-sm text-muted-foreground mt-1">{s.l}</div>
+            </div>
+          ))}
+        </div>
+
+        <a href="/about" class="mt-10 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-ice text-ice font-medium hover:bg-ice hover:text-white transition-all">
+          Nuestra historia <Icon name="arrow-right" class="h-4 w-4" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICES ─── -->
+  <section class="py-32 relative bg-[oklch(0.16_0.05_240)] overflow-hidden">
+    <div class="absolute inset-0 grid-blueprint opacity-20"></div>
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div class="reveal">
+          <p class="font-mono text-xs uppercase tracking-[0.3em] text-ice mb-4">Servicios</p>
+          <h2 class="font-display text-4xl md:text-5xl font-bold max-w-xl leading-tight text-white">
+            Ingeniería de refrigeración de amplio espectro.
+          </h2>
+        </div>
+        <a href="/services" class="inline-flex items-center gap-2 text-ice font-medium hover:gap-3 transition-all reveal">
+          Todos los servicios <Icon name="arrow-right" class="h-4 w-4" />
+        </a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden stagger">
+        {[
+          { icon: "snowflake",        title: "Refrigeración Industrial",       desc: "Sistemas de amoniaco, CO₂ y freón diseñados para operación continua." },
+          { icon: "boxes",            title: "Cámaras Frías",                  desc: "Cámaras de almacenamiento modulares y personalizadas de 0°C a +12°C." },
+          { icon: "thermometer",      title: "Cuartos de Congelación",         desc: "Congelación a baja y ultra-baja temperatura hasta −40°C." },
+          { icon: "activity",         title: "Sistemas de Cadena de Frío",     desc: "Infraestructura térmica integral para centros de distribución." },
+          { icon: "wrench",           title: "Mantenimiento",                  desc: "Servicio preventivo, correctivo y de emergencia 24/7 en todo el país." },
+          { icon: "factory",          title: "Proyectos Llave en Mano",        desc: "Diagnóstico, ingeniería, instalación y puesta en marcha bajo un solo contrato." },
+          { icon: "gauge",            title: "Eficiencia Energética",          desc: "Retrofits, variadores de velocidad y sistemas de recuperación de calor." },
+          { icon: "building-2",       title: "Refrigeración Comercial",        desc: "Refrigeración para supermercados, restaurantes y HORECA." },
+        ].map((s, i) => (
+          <div class="group relative bg-white/5 p-7 hover:bg-white/10 transition-all duration-500 cursor-pointer reveal" style={`transition-delay: ${i * 60}ms`}>
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition pointer-events-none" style="background: radial-gradient(circle at 50% 0%, oklch(0.50 0.18 235 / 0.12), transparent 70%);"></div>
+            <div class="relative">
+              <div class="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-ice/10 border border-ice/30 mb-5 group-hover:bg-ice/20 group-hover:shadow-glow transition">
+                <Icon name={s.icon} class="h-5 w-5 text-ice" />
+              </div>
+              <h3 class="font-display text-lg font-semibold mb-2 text-white">{s.title}</h3>
+              <p class="text-sm text-white/60 leading-relaxed mb-5">{s.desc}</p>
+              <span class="text-xs font-mono uppercase tracking-wider text-ice opacity-0 group-hover:opacity-100 inline-flex items-center gap-1 transition">
+                Saber más <Icon name="arrow-up-right" class="h-3 w-3" />
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INDUSTRIES ─── -->
+  <section class="py-32 relative overflow-hidden" style="background: oklch(0.13 0.05 240);">
+    <img src="/images/warehouse.jpg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-20 parallax-img" data-parallax="0.18" />
+    <div class="absolute inset-0 stripe-diagonal opacity-60 pointer-events-none"></div>
+    <div class="absolute inset-0 grid-blueprint opacity-30 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[oklch(0.13_0.05_240)]/80 via-transparent to-[oklch(0.13_0.05_240)]/60 pointer-events-none"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 h-64 w-[800px] bg-ice/10 blur-[80px] rounded-full pointer-events-none"></div>
+
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div class="reveal">
+          <p class="font-mono text-xs uppercase tracking-[0.3em] text-ice mb-4 font-semibold">Industrias</p>
+          <h2 class="font-display text-4xl md:text-5xl font-bold max-w-xl leading-tight text-white">
+            Para industrias donde el frío es crítico.
+          </h2>
+        </div>
+        <a href="/industries" class="inline-flex items-center gap-2 text-ice font-medium hover:gap-3 transition-all reveal">
+          Ver todas <Icon name="arrow-right" class="h-4 w-4" />
+        </a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
+        {[
+          { icon: "utensils-crossed", title: "Industria Alimentaria", desc: "Procesamiento, congelación rápida, almacenamiento en frío.",      img: "/images/cold-room.jpg" },
+          { icon: "flask-conical",    title: "Farmacéutica",          desc: "Control de temperatura compatible con BPM.",                     img: "/images/engineer.jpg" },
+          { icon: "truck",            title: "Logística",             desc: "Centros de distribución y andenes refrigerados.",                img: "/images/warehouse.jpg" },
+          { icon: "utensils-crossed", title: "Restaurantes",          desc: "Refrigeración comercial para HORECA.",                          img: "/images/pipes.jpg" },
+          { icon: "shopping-cart",    title: "Supermercados",         desc: "Sistemas de exhibición y cámaras de backroom.",                  img: "/images/cold-room.jpg" },
+          { icon: "building-2",       title: "Centros de Distribución", desc: "Almacenamiento en frío multizona a gran escala.",             img: "/images/warehouse.jpg" },
+        ].map((ind) => (
+          <a href="/industries" class="group relative h-80 rounded-2xl overflow-hidden border border-white/10 cursor-pointer reveal-scale block hover:border-ice/40 transition-colors duration-300">
+            <img src={ind.img} alt={ind.title} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[oklch(0.10_0.05_240)] via-[oklch(0.10_0.05_240)]/50 to-transparent"></div>
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background: linear-gradient(135deg, oklch(0.50 0.18 235 / 0.08) 0%, transparent 60%);"></div>
+            <div class="absolute bottom-0 inset-x-0 p-5">
+              <div class="flex items-center gap-2.5 mb-2">
+                <div class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-ice shadow-glow shrink-0">
+                  <Icon name={ind.icon} class="h-4 w-4 text-white" />
+                </div>
+                <h3 class="font-display text-lg font-bold text-white">{ind.title}</h3>
+              </div>
+              <p class="text-sm text-white/65 leading-relaxed">{ind.desc}</p>
+              <span class="mt-3 inline-flex items-center gap-1 text-xs text-ice font-mono uppercase tracking-wider opacity-0 group-hover:opacity-100 transition">
+                Ver casos de estudio <Icon name="arrow-up-right" class="h-3 w-3" />
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ─── -->
+  <section class="py-32 relative overflow-hidden" style="background: linear-gradient(160deg, oklch(0.97 0.01 240) 0%, oklch(0.94 0.025 235) 100%);">
+    <div class="absolute inset-0 topo-pattern opacity-80 pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-ice/8 blur-[100px] rounded-full pointer-events-none"></div>
+
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div class="reveal">
+          <p class="font-mono text-xs uppercase tracking-[0.3em] text-ice mb-4">Proyectos destacados</p>
+          <h2 class="font-display text-4xl md:text-5xl font-bold max-w-xl leading-tight text-foreground">
+            Infraestructura que opera todos los días.
+          </h2>
+        </div>
+        <a href="/projects" class="inline-flex items-center gap-2 text-ice font-medium hover:gap-3 transition-all reveal">
+          Todos los proyectos <Icon name="arrow-right" class="h-4 w-4" />
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 md:auto-rows-[300px] gap-5">
+        {[
+          { title: "Hub de Distribución en Frío",     loc: "Querétaro · 2024", img: "/images/warehouse.jpg", temp: "−25°C",     cap: "8,400 m³", time: "14 semanas", span: "md:col-span-2 md:row-span-2" },
+          { title: "Cuarto Limpio Farmacéutico",       loc: "CDMX · 2023",     img: "/images/engineer.jpg",  temp: "+2 / +8°C", cap: "1,200 m³", time: "9 semanas",  span: "" },
+          { title: "Línea de Congelación Rápida",      loc: "Sinaloa · 2024",  img: "/images/cold-room.jpg", temp: "−40°C",     cap: "600 m³",   time: "11 semanas", span: "" },
+          { title: "Retrofit Planta de Amoniaco",      loc: "Monterrey · 2023",img: "/images/pipes.jpg",     temp: "−30°C",     cap: "5 MW",     time: "20 semanas", span: "md:col-span-2" },
+        ].map((p, i) => (
+          <article class={`group relative overflow-hidden rounded-2xl border border-border ${p.span} reveal-scale`} style={`transition-delay: ${i * 80}ms`}>
+            <img src={p.img} alt={p.title} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[oklch(0.16_0.05_240)]/95 via-[oklch(0.16_0.05_240)]/40 to-transparent"></div>
+            <div class="absolute inset-0 p-6 flex flex-col justify-between">
+              <div class="flex gap-2">
+                <span class="glass text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full text-white">{p.temp}</span>
+                <span class="glass text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full text-white">{p.cap}</span>
+              </div>
+              <div>
+                <p class="text-xs text-white/60 font-mono">{p.loc}</p>
+                <h3 class="font-display text-2xl font-semibold mt-1 text-white">{p.title}</h3>
+                <div class="mt-3 flex items-center gap-2 text-ice text-sm opacity-0 group-hover:opacity-100 transition">
+                  Ver caso de estudio <Icon name="arrow-up-right" class="h-4 w-4" />
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TECHNOLOGY ─── -->
+  <section class="py-32 relative overflow-hidden" style="background: linear-gradient(180deg, oklch(0.16 0.05 240) 0%, oklch(0.20 0.06 240) 100%);">
+    <img src="/images/pipes.jpg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover opacity-10 parallax-img" data-parallax="0.15" />
+    <div class="absolute inset-0 grid-blueprint opacity-25 pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-ice/12 blur-[140px] pointer-events-none"></div>
+
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-ice mb-4 font-semibold">Tecnología</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight text-white">
+          Refrigeración inteligente. <span class="text-gradient-ice">Medida en tiempo real.</span>
+        </h2>
+        <p class="mt-6 text-white/65 text-lg">
+          Monitoreo habilitado con IoT, mantenimiento predictivo y optimización
+          energética en cada compresor, evaporador y condensador que instalamos.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6 stagger">
+        {[
+          { icon: "activity",     title: "Monitoreo en vivo",       desc: "Telemetría de temperatura, presión y energía cada 5 segundos." },
+          { icon: "cpu",          title: "Controles inteligentes",   desc: "Automatización con PLC, dashboards en la nube y alertas." },
+          { icon: "line-chart",   title: "Optimización energética",  desc: "Variadores de velocidad reducen el consumo hasta un 35%." },
+          { icon: "shield-check", title: "Mantenimiento predictivo", desc: "Detección de anomalías anticipa fallas antes de que ocurran." },
+          { icon: "gauge",        title: "Precisión de ingeniería",  desc: "Diseño de flujo de aire validado por CFD en cada cámara." },
+          { icon: "sparkles",     title: "Automatización industrial", desc: "Integración SCADA con la infraestructura existente de la planta." },
+        ].map((t) => (
+          <div class="group rounded-2xl p-7 border border-white/10 hover:border-ice/40 transition-all duration-300 reveal" style="background: oklch(1 0 0 / 0.06); backdrop-filter: blur(12px);">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-ice shadow-glow mb-5 group-hover:scale-110 transition-transform">
+              <Icon name={t.icon} class="h-5 w-5 text-white" />
+            </div>
+            <h3 class="font-display text-lg font-semibold mb-2 text-white">{t.title}</h3>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROCESS ─── -->
+  <section class="py-32 bg-[oklch(0.16_0.05_240)] relative overflow-hidden">
+    <div class="absolute inset-0 grid-blueprint opacity-15"></div>
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-16 reveal">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-ice mb-4">Proceso</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold max-w-2xl leading-tight text-white">
+          De la primera visita al soporte de por vida.
+        </h2>
+      </div>
+
+      <div class="relative">
+        <div class="hidden lg:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ice/30 to-transparent"></div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 stagger">
+          {[
+            { n: "01", title: "Diagnóstico",    desc: "Visita al sitio, análisis de carga y mapeo térmico." },
+            { n: "02", title: "Ingeniería",     desc: "Diseño mecánico, eléctrico y de sistemas de control." },
+            { n: "03", title: "Diseño",         desc: "P&IDs, layouts 3D, coordinación BIM." },
+            { n: "04", title: "Instalación",    desc: "Cuadrillas certificadas y gestión de proyecto." },
+            { n: "05", title: "Puesta en Marcha", desc: "Pruebas de rendimiento y documentación de entrega." },
+            { n: "06", title: "Mantenimiento",  desc: "Contratos preventivos y respuesta 24/7." },
+          ].map((s, i) => (
+            <div class="group relative reveal" style={`transition-delay: ${i * 80}ms`}>
+              <div class="relative h-24 flex items-center justify-center mb-5">
+                <div class="absolute h-3 w-3 rounded-full bg-ice shadow-glow z-10"></div>
+                <div class="absolute h-12 w-12 rounded-full border border-ice/30 group-hover:border-ice transition"></div>
+                <div class="absolute h-20 w-20 rounded-full border border-ice/10 group-hover:border-ice/30 transition"></div>
+              </div>
+              <div class="text-center">
+                <span class="font-mono text-xs text-ice">{s.n}</span>
+                <h3 class="font-display text-base font-semibold mt-1 text-white">{s.title}</h3>
+                <p class="mt-2 text-xs text-white/55 leading-relaxed">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIALS ─── -->
+  <section class="py-32 relative overflow-hidden" style="background: linear-gradient(135deg, oklch(0.96 0.02 235) 0%, oklch(0.98 0.01 240) 50%, oklch(0.95 0.025 235) 100%);">
+    <div class="absolute inset-0 dot-pattern opacity-50 pointer-events-none"></div>
+    <div class="absolute -top-10 left-6 font-display text-[280px] font-bold leading-none text-ice/5 pointer-events-none select-none">"</div>
+    <div class="absolute bottom-0 right-0 h-80 w-80 bg-ice/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="mb-16 text-center reveal">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-ice mb-4 font-semibold">Confianza de clientes</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight text-foreground">Lo que dicen nuestros clientes.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 stagger">
+        {[
+          { quote: "SMR entregó nuestro hub de distribución dos semanas antes de lo programado. El sistema ha funcionado sin fallas desde el primer día.", name: "Carlos Ramírez",    role: "Director de Operaciones, Cold Logistics MX", company: "COLD-LOG" },
+          { quote: "Su profundidad de ingeniería y respuesta 24/7 los distinguen de todos los contratistas que evaluamos.",                               name: "Ana Sofía Mendoza", role: "Gerente de Planta",                             company: "SIGMA FOODS" },
+          { quote: "El consumo energético bajó 32% después de su retrofit. El retorno de inversión fue menor a 18 meses.",                               name: "Roberto Vega",      role: "VP de Instalaciones",                          company: "DISTRIBUIDORA NACIONAL" },
+        ].map((t, i) => (
+          <figure class="bg-white border border-border rounded-2xl p-8 hover:border-ice/40 hover:shadow-lg transition-all duration-300 reveal" style={`transition-delay: ${i * 100}ms`}>
+            <Icon name="quote" class="h-8 w-8 text-ice mb-5" />
+            <blockquote class="text-foreground leading-relaxed text-base">"{t.quote}"</blockquote>
+            <figcaption class="mt-6 pt-6 border-t border-border">
+              <div class="font-display font-semibold text-foreground">{t.name}</div>
+              <div class="text-sm text-muted-foreground mt-0.5">{t.role}</div>
+              <div class="mt-2 inline-block font-mono text-xs uppercase tracking-wider text-white bg-gradient-ice rounded-full px-3 py-1">{t.company}</div>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT CTA ─── -->
+  <section class="py-32 bg-background">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="relative overflow-hidden rounded-3xl border border-border reveal-scale" style="min-height: 400px;">
+        <img src="/images/pipes.jpg" alt="" class="absolute inset-0 h-full w-full object-cover parallax-img" data-parallax="0.15" />
+        <div class="absolute inset-0 bg-gradient-to-br from-[oklch(0.16_0.05_240)]/95 via-[oklch(0.16_0.05_240)]/80 to-[oklch(0.16_0.05_240)]/60"></div>
+        <div class="absolute -top-20 -right-20 h-96 w-96 rounded-full bg-ice/20 blur-[120px]"></div>
+
+        <div class="relative p-10 md:p-20 max-w-2xl">
+          <p class="font-mono text-xs uppercase tracking-[0.3em] text-ice mb-5">Empecemos</p>
+          <h2 class="font-display text-4xl md:text-6xl font-bold leading-[0.95] text-white">
+            Habla con nuestro<br /><span class="text-gradient-ice">equipo de ingeniería.</span>
+          </h2>
+          <p class="mt-6 text-lg text-white/70">
+            Cuéntanos sobre tu proyecto. Respondemos en 24 horas con una
+            evaluación técnica preliminar.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-gradient-ice text-white font-medium shadow-glow hover:opacity-90 transition">
+              Solicitar Cotización <Icon name="arrow-right" class="h-4 w-4" />
+            </a>
+            <a href="https://wa.me/525512345678" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-md glass hover:border-ice/40 transition font-medium text-white">
+              Escríbenos por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,114 @@
+---
+import Icon from './Icon.astro';
+
+const links = [
+  { href: "/", label: "Inicio" },
+  { href: "/about", label: "Nosotros" },
+  { href: "/services", label: "Servicios" },
+  { href: "/projects", label: "Proyectos" },
+  { href: "/industries", label: "Industrias" },
+  { href: "/technology", label: "Tecnología" },
+  { href: "/contact", label: "Contacto" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-transparent">
+  <div class="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2.5 group">
+      <span class="relative inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-ice shadow-glow">
+        <Icon name="snowflake" class="h-5 w-5 text-white" />
+      </span>
+      <span class="font-display text-xl font-bold tracking-tight text-foreground">SMR</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex items-center gap-1">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          class={`px-3 py-2 text-sm transition-colors relative ${
+            currentPath === l.href
+              ? 'text-ice font-medium'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          {l.label}
+          {currentPath === l.href && (
+            <span class="absolute -bottom-0.5 left-3 right-3 h-0.5 rounded-full bg-gradient-ice" />
+          )}
+        </a>
+      ))}
+    </nav>
+
+    <!-- CTA -->
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="/contact" class="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium bg-gradient-ice text-white hover:opacity-90 transition shadow-glow">
+        Solicitar Cotización
+      </a>
+    </div>
+
+    <!-- Mobile toggle -->
+    <button
+      id="mobile-toggle"
+      class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-white/80"
+      aria-label="Toggle menu"
+    >
+      <span id="icon-menu"><Icon name="menu" class="h-5 w-5" /></span>
+      <span id="icon-close" class="hidden"><Icon name="x" class="h-5 w-5" /></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-border shadow-md">
+    <div class="px-6 py-4 flex flex-col gap-1">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          class={`py-2.5 text-sm transition-colors ${
+            currentPath === l.href ? 'text-ice font-medium' : 'text-muted-foreground hover:text-ice'
+          }`}
+        >
+          {l.label}
+        </a>
+      ))}
+      <a
+        href="/contact"
+        class="mt-3 inline-flex justify-center items-center px-4 py-2.5 rounded-md text-sm font-medium bg-gradient-ice text-white"
+      >
+        Solicitar Cotización
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const navbar = document.getElementById('navbar')!;
+  const toggle = document.getElementById('mobile-toggle')!;
+  const menu = document.getElementById('mobile-menu')!;
+  const iconMenu = document.getElementById('icon-menu')!;
+  const iconClose = document.getElementById('icon-close')!;
+
+  // Scroll effect
+  const onScroll = () => {
+    if (window.scrollY > 10) {
+      navbar.classList.add('glass-nav');
+      navbar.classList.remove('bg-white/80', 'backdrop-blur-md', 'border-transparent');
+    } else {
+      navbar.classList.remove('glass-nav');
+      navbar.classList.add('bg-white/80', 'backdrop-blur-md', 'border-transparent');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile toggle
+  toggle.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', isOpen);
+    iconMenu.classList.toggle('hidden', !isOpen);
+    iconClose.classList.toggle('hidden', isOpen);
+  });
+</script>

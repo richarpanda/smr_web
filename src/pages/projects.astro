@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+
+const projects = [
+  { title: "Hub de Distribución en Frío",       loc: "Querétaro · 2024",  img: "/images/warehouse.jpg", temp: "−25°C",      cap: "8,400 m³", time: "14 semanas" },
+  { title: "Cuarto Limpio Farmacéutico",         loc: "CDMX · 2023",      img: "/images/engineer.jpg",  temp: "+2 / +8°C",  cap: "1,200 m³", time: "9 semanas"  },
+  { title: "Línea de Congelación Rápida",        loc: "Sinaloa · 2024",   img: "/images/cold-room.jpg", temp: "−40°C",      cap: "600 m³",   time: "11 semanas" },
+  { title: "Retrofit Planta de Amoniaco",        loc: "Monterrey · 2023", img: "/images/pipes.jpg",     temp: "−30°C",      cap: "5 MW",     time: "20 semanas" },
+  { title: "Planta Procesadora de Mariscos",     loc: "Veracruz · 2022",  img: "/images/cold-room.jpg", temp: "−18°C",      cap: "3,200 m³", time: "16 semanas" },
+  { title: "Despliegue Cadena de Supermercados", loc: "Nacional · 2024",  img: "/images/warehouse.jpg", temp: "−25 / +4°C", cap: "42 tiendas", time: "32 semanas" },
+];
+---
+
+<BaseLayout
+  title="Proyectos — SMR"
+  description="Proyectos seleccionados de refrigeración industrial y casos de estudio."
+  canonical="/projects"
+  ogTitle="Proyectos — SMR"
+  ogDescription="Casos de estudio de infraestructura de cadena de frío."
+>
+  <PageHero
+    eyebrow="Proyectos"
+    title="Infraestructura que opera todos los días."
+    subtitle="Una selección de instalaciones llave en mano y retrofits de ingeniería recientes."
+  />
+
+  <section class="py-24">
+    <div class="mx-auto max-w-7xl px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((p) => (
+        <article class="group relative h-96 overflow-hidden rounded-2xl border border-border cursor-pointer reveal-scale">
+          <img src={p.img} alt={p.title} loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent"></div>
+          <div class="absolute inset-0 p-6 flex flex-col justify-between">
+            <div class="flex flex-wrap gap-2">
+              <span class="glass text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full">{p.temp}</span>
+              <span class="glass text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full">{p.cap}</span>
+              <span class="glass text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full">{p.time}</span>
+            </div>
+            <div>
+              <p class="text-xs text-muted-foreground font-mono">{p.loc}</p>
+              <h3 class="font-display text-2xl font-semibold mt-1 flex items-center gap-2">
+                {p.title}
+                <Icon name="arrow-up-right" class="h-5 w-5 text-ice opacity-0 group-hover:opacity-100 transition" />
+              </h3>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

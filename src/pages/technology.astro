@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+
+const features = [
+  { icon: "activity",     title: "Monitoreo en vivo",        desc: "Telemetría de temperatura, presión y energía cada 5 segundos, transmitida a un dashboard unificado." },
+  { icon: "cpu",          title: "Controles inteligentes",    desc: "Automatización con PLC, dashboards en la nube, acceso por roles y alertas configurables." },
+  { icon: "line-chart",   title: "Optimización energética",   desc: "Variadores de velocidad, presión de cabeza flotante y recuperación de calor reducen el consumo hasta un 35%." },
+  { icon: "shield-check", title: "Mantenimiento predictivo",  desc: "La detección estadística de anomalías anticipa fallas de compresores y evaporadores con días de anticipación." },
+  { icon: "gauge",        title: "Precisión de ingeniería",   desc: "Diseño de flujo de aire validado por CFD en cada cámara, comprobado durante la puesta en marcha." },
+  { icon: "sparkles",     title: "Automatización industrial", desc: "Integración SCADA con infraestructura MES y ERP existente para visibilidad operativa total." },
+];
+
+const protocols = ["Modbus TCP", "BACnet/IP", "OPC UA", "MQTT", "REST API", "SNMP"];
+---
+
+<BaseLayout
+  title="Tecnología — SMR"
+  description="Monitoreo IoT, controles inteligentes, mantenimiento predictivo y optimización energética."
+  canonical="/technology"
+  ogTitle="Tecnología — SMR"
+  ogDescription="Refrigeración inteligente medida en tiempo real."
+>
+  <PageHero
+    eyebrow="Tecnología"
+    title="Refrigeración inteligente, medida en tiempo real."
+    subtitle="Cada sistema que instalamos está conectado, instrumentado y continuamente optimizado."
+  />
+
+  <!-- Feature grid -->
+  <section class="py-24 relative">
+    <div class="absolute inset-0 grid-blueprint opacity-30"></div>
+    <div class="relative mx-auto max-w-7xl px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((f) => (
+        <div class="glass rounded-2xl p-7 hover:border-ice/40 transition group reveal">
+          <div class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-ice/10 border border-ice/20 mb-5 group-hover:shadow-glow transition">
+            <Icon name={f.icon} class="h-5 w-5 text-ice" />
+          </div>
+          <h3 class="font-display text-lg font-semibold mb-2">{f.title}</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Open architecture -->
+  <section class="py-24">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="glass-strong rounded-3xl p-10 md:p-16 reveal">
+        <h2 class="font-display text-3xl md:text-4xl font-bold">Arquitectura abierta por diseño.</h2>
+        <p class="mt-6 text-muted-foreground text-lg leading-relaxed">
+          Nuestro stack de control habla Modbus, BACnet, OPC UA y MQTT — así tu
+          infraestructura de refrigeración se conecta al resto de tu planta sin
+          dependencia de un solo proveedor.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-2">
+          {protocols.map((p) => (
+            <span class="px-3 py-1.5 rounded-full glass text-xs font-mono uppercase tracking-wider text-ice">{p}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
